@@ -42,6 +42,8 @@
       body {
         background-color: #45454d;
         color: #b5b5bd;
+        font-size: 20px;
+        font-family: "Gotham-Light", "Helvetica Neue", Arial, Sans-Serif;
       }
       
       .separator {
@@ -51,6 +53,11 @@
         background-position: center;
         margin-top: 15px;
         margin-bottom: 20px;
+      }
+      
+      h2 {
+        font-family: Aleo, 'Helvetica Neue';
+        font-size: 30px;
       }
       
       #irregularities_grouped_in_parties_chart {
@@ -259,17 +266,26 @@
         margin: 0 auto 0 auto;
       }
       
+      .vote-line {
+      }
+      
+      .vote-line h3 {
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 1em;
+      }
+      
     </style>
   </head>
   <body>
     
-    <div style="background-color: #34343C; padding-top: 20px; padding-bottom: 20px;">
+    <div style="background-color: #34343C; padding-top: 30px; padding-bottom: 30px; margin-bottom: 20px;">
       <div class="container">
         <div class="row">
           <div class="col-md-3">
             <img src="images/visualblower-logo.png" style="width: 100%" />
           </div>
-          <div class="col-md-9" style="color: #878793; font-size: 30px; font-weight: 400; line-height: 1em;">
+          <div class="col-md-9" style="color: #878793; font-family: Aleo, 'Helvetica Neue'; font-size: 30px; font-weight: 400; line-height: 1em;">
             <p>Deutsche Politiker<br />
             verlieren Ihr Gesicht</p>
           </div>
@@ -287,7 +303,7 @@
           <h2>Political Blacklist</h2>
           <p>Die Auswertung zeigt die Menge der 631 Politikern, welche durch Enthaltung, keiner Abstimmung geglänzt haben oder gegen Ihre eigene Partei gestimmt haben</p>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-top: 20px;">
           <div class="bar-chart">
             <div class="regular">75%</div>
             <div class="irregular">25%</div>
@@ -295,13 +311,16 @@
         </div>
       </div>
       
-      <div class="separator"></div>
+      <div class="separator" style="margin-bottom: 0; "></div>
       
       <div class="row">
-        <div class="col-md-4 irregularities-grouped-in-parties">
+        <div class="col-md-4">
           <div id="irregularities_grouped_in_parties_chart"></div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 irregularities-grouped-in-parties">
+          <br />
+          <br />
+          <br />
           <h2>Die schwarze Herde der Parteien</h2>
           <p>Die 631 Politikern wurden auf die jeweilige Partei eingeteilt. Es zeigt die Parteien, welche die meisten Politiker der Blacklist beherbergt.</p>
         </div>
@@ -429,7 +448,7 @@
               
             </div>
           </div>
-          <div class="row">
+          <div class="row vote-line">
             <div class="col-md-12">
               <h3>Lorem Ipsum</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -441,7 +460,7 @@
               <div>98% dafür</div>
             </div>
           </div>
-          <div class="row">
+          <div class="row vote-line">
             <div class="col-md-12">
               <h3>Lorem Ipsum</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -453,7 +472,7 @@
               <div>98% dafür</div>
             </div>
           </div>
-          <div class="row">
+          <div class="row vote-line">
             <div class="col-md-12">
               <h3>Lorem Ipsum</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -465,7 +484,7 @@
               <div>98% dafür</div>
             </div>
           </div>
-          <div class="row">
+          <div class="row vote-line">
             <div class="col-md-12">
               <h3>Lorem Ipsum</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -480,9 +499,24 @@
         </div>
       </div>
       
-      <br />
-      <br />
-      <br />
+      <div class="separator" style="margin-top: 40px;"></div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <img src="images/twitter.png" style="width: 100%" />
+        </div>
+      </div>
+
+      <div class="separator" style="margin-bottom: 40px;"></div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <img src="images/share.png" style="width: 100%" />
+          <br />
+          <br />
+          <br />
+        </div>
+      </div>
       
     </div>
     
