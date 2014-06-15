@@ -44,6 +44,15 @@
         color: #b5b5bd;
       }
       
+      .separator {
+        background-image: url("images/separator.png");
+        height: 33px;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 15px;
+        margin-bottom: 20px;
+      }
+      
       #irregularities_grouped_in_parties_chart {
         height: 400px;
       }
@@ -181,6 +190,7 @@
         height: 40px;
         line-height: 40px;
         background-color: #F0444B;
+        border: 2px solid #F0444B;
         color: #FFFFFF;
         text-align: center;
       }
@@ -189,6 +199,7 @@
         height: 40px;
         line-height: 40px;
         background-color: #45DA64;
+        border: 2px solid #45DA64;
         color: #000000;
         text-align: center;
       }
@@ -196,7 +207,8 @@
       .without-vote div {
         height: 40px;
         line-height: 40px;
-        background-color: #45DA64;
+        background-color: #737380;
+        border: 2px solid #737380;
         color: #000000;
         text-align: center;
       }
@@ -205,6 +217,7 @@
         height: 40px;
         line-height: 40px;
         background-color: #35343C;
+        border: 2px solid #737380;
         color: #FFFFFF;
         text-align: center;
       }
@@ -282,7 +295,7 @@
         </div>
       </div>
       
-      <hr />
+      <div class="separator"></div>
       
       <div class="row">
         <div class="col-md-4 irregularities-grouped-in-parties">
@@ -294,7 +307,7 @@
         </div>
       </div>
       
-      <hr />
+      <div class="separator"></div>
       
       <div class="row">
         <div class="col-md-4 bad-boys">
@@ -374,7 +387,7 @@
         </div>
       </div>
       
-      <hr />
+      <div class="separator"></div>
       
       <div class="row">
         <div class="col-md-4 battle-ground">
@@ -457,10 +470,10 @@
               <h3>Lorem Ipsum</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
             </div>
-            <div class="col-md-6 declined">
+            <div class="col-md-6 without-vote">
               <div>dagegen</div>
             </div>
-            <div class="col-md-6 accepted">
+            <div class="col-md-6 avoided-vote">
               <div>98% dafür</div>
             </div>
           </div>
