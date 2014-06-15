@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+        <title>Data Journalism</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link href="c3.css" rel="stylesheet" type="text/css">
+        <style>
+
+
+        </style>
+        <!--script src="js/bootstrap.min.js"></script-->
+        <script src="js/d3.v3.min.js" charset="utf-8"></script>
+        <script src="js/c3.min.js" charset="utf-8"></script>
+        <script src="js/underscore-min.js" charset="utf-8"></script>
+        <script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+        <script src="data/eu.js" charset="utf-8"></script>
+        <script>
+
+function getWkData(id) {
+    var data;
+    eu_election.forEach(function(d) {
+        var name;
+        if(d.wahlkreis_nr == id) {
+            data = [];
+            for(p in d) {
+                if(p.endsWith('_ap')) {
+                    name = p.substr(0, p.length-3);
+                    data.push([name, d[p]]);
+                }
+            }
+        }
+    });
+    return data;
+}
+
+window.addEventListener('load', function() {
+    console.log("Los geht's");
+
+    // Generate pie chart
+    var chart = c3.generate({
+        bindto: '#piechart',
+        data: {
+            columns: getWkData(1001),
+            type : 'pie'
+        },
+        legend: {
+            position: 'right',
+            onclick: function (d, i) { console.log(d, i); },
+        },
+        pie: {
+            onclick: function (d, i) { console.log(d, i); },
+            onmouseover: function (d, i) { console.log(d, i); },
+            onmouseout: function (d, i) { console.log(d, i); }
+        }
+    });
+
+    // Genrate list of parties
+    var parties = _.chain(_.keys(eu_election[0]))
+                       .filter(function(v) { return v.endsWith('_ap'); })
+                       .map(function(v) { return v.slice(0, -3) })
+                       .value();
+    parties.forEach(function(party) {
+        var cb = $('<div class="checkbox"><label><input type="checkbox"></label></div>');
+        cb.find('label').append(party);
+        cb.find('input').click(function(ev) {
+            console.log(ev.target);
+            console.log(party);
+        });
+        $('#parties').append(cb);
+    });
+
+    // Generate the barchart
+    var categories_short = ["Pinneberg","Rendsb.-Eckernförde","Segeberg","Stormarn","Kiel","Lübeck","Ostholstein","Schleswig-Flensburg","Lauenburg","Nordfriesland","Dithmarschen","Steinburg","Plön","Flensburg","Neumünster"];
+    var columns = _.chain(eu_election)
+                        .where({"bundesland":1})
+                        .sortBy(function(kreis) {
+                            return -kreis.wahlber
+                        })
+                        .reduce(function(arr, kreis) {
+                            arr[0].push(kreis.wahlkreis_nr);
+                            arr[1].push(kreis.wahlkreis);
+                            arr[2].push(kreis.wahlber);
+                            arr[3].push(kreis.waehler);
+                            arr[4].push(kreis.waehler_vp);
+                            return arr;
+                        }, [[], [], ['Wahlberechtigte'], ['Wähler'], ['Wähler 2009']])
+                        .value();
+    var wk_ids = columns.shift();
+    var categories = columns.shift();
+    console.log(JSON.stringify(columns));
+    var barchart = c3.generate({
+        bindto: '#barchart',
+        data: {
+            columns: columns,
+            type: 'bar',
+            onclick: function (d, i) {
+                console.log(wk_ids[d.x], categories[d.x]);
+                console.log(d);
+                $('#wahlkreis').html(categories[d.x]);
+                chart.load({
+                    columns: getWkData(wk_ids[d.x]),
+                });
+            }
+        },
+        axis: {
+            x: {
+                type: 'category',
+                categories: categories_short
+            }
+        },
+    });
+
+    $('#piechart .c3-legend-item').click(function(evt) {
+        console.log(evt.currentTarget.__data__);
+        console.log(evt);
+    });
+
+}, false);
+
+        </script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="page-header">
+                <h1>Data Journalism</h1>
+                <p class="lead">Eine Vorlage für Daten-Jounalisten basierend auf bootstrap, D3, C3, underscore and of course jQuery.</p>
+            </div>
+
+            <h3>Die Wahlbeteiligung in Schleswig-Holstein</h3>
+            <p class="text-warning">No grid classes are necessary for full-width elements.</p>
+
+            <div id="barchart"></div>
+
+            <h3>Vorläufiges Wahlergebnis in <span id="wahlkreis">Flensburg, Stadt</span></h3>
+            <p>Get two columns <strong>starting at desktops and scaling to large desktops</strong>.</p>
+            <div class="row">
+                <div class="col-md-10"><div id="piechart"></div></div>
+                <div class="col-md-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Parteien</div>
+                        <div id="parties" class="panel-body small"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
