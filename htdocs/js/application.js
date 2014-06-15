@@ -1,6 +1,7 @@
 $(function() {
 
   var irregularities_grouped_in_parties_data;
+  var bb_div = $('div.col-xs-3').parent();
 
   // Gauge
 
@@ -38,20 +39,32 @@ $(function() {
       type: 'donut'
     },
     donut: {
-      onclick: function (d, i) { console.log(d, i); },
-      onmouseover: function (d, i) { console.log(d, i); },
-      onmouseout: function (d, i) { console.log(d, i); }
+      onclick: function (d, i) {
+        var bad_boys = _.chain(outputData.badboys)
+            .where({'party' : d.name})
+            .value();
+        var html = '', i = 0;
+        bad_boys.forEach(function(bb) {
+            if(i++ < 8) {
+                html += '<div class="col-xs-3"><div class="head-with-name-label"><div class="head"><img style="width: 100%;" src="images/head/'+bb.picture+'"></div><div class="name-label">'+bb.name+'</div></div></div>';
+            }
+        });
+        bb_div.html(html);
+
+      },
     }
   });
 
   var bad_boys = _.chain(outputData.badboys)
       .where({'party' : 'CDU'})
       .value();
-  var html = '';
+  var html = '', i = 0;
   bad_boys.forEach(function(bb) {
-      html += '<div class="col-xs-3"><div class="head-with-name-label"><div class="head"><img style="width: 100%;" src="images/head/'+bb.picture+'"></div><div class="name-label">'+bb.name+'</div></div></div>';
-  });
-  $('div.col-xs-3').parent().html(html);
+      if(i++ < 8) {
+          html += '<div class="col-xs-3"><div class="head-with-name-label"><div class="head"><img style="width: 100%;" src="images/head/'+bb.picture+'"></div><div class="name-label">'+bb.name+'</div></div></div>';
+      }
+});
+  bb_div.html(html);
 
 
 });
