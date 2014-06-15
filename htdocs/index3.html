@@ -18,7 +18,7 @@
     <style type="text/css" media="screen">
       body {
         background-color: #45454d;
-        color: #FFFFFF;
+        color: #b5b5bd;
       }
       
       #regular_vs_irregular_chart {
@@ -40,23 +40,82 @@
         height: 200px;
         background-color: #F1F1F1;
       }
+      
+      
+      /************************************/
+      
+      .regular-people-description {
+        
+      }
+      
+      .regular-people-description h2 {
+        color: #ffb456;
+      }
+      
+      .irregular-people-description {
+      }
+      
+      .irregular-people-description h2 {
+        color: #ff74a5;
+      }
+      
+      .bar-chart {
+        background-color: #525260;
+        height: 60px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        overflow: hidden;
+        border-radius: 5px;
+        border: 6px solid #34343c;
+      }
+      
+      .bar-chart .regular {
+        background-color: #525260;
+        width: 40%;
+        height: 60px;
+        float: left;
+      }
+      
+      .bar-chart .irregular {
+        background-color: #ff74a5;
+        width: 60%;
+        height: 60px;
+        float: left;
+      }
     </style>
   </head>
   <body>
     
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="col-md-6">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div style="background-color: #34343C; padding-top: 20px; padding-bottom: 20px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="images/visualblower-logo.png" style="width: 100%" />
+          </div>
+          <div class="col-md-9" style="color: #878793; font-size: 30px; font-weight: 400; line-height: 1em;">
+            <p>Deutsche Politiker<br />
+            verlieren Ihr Gesicht</p>
+          </div>
         </div>
       </div>
-      <hr />
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 regular-people-description">
+          <h2>Lorem ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.</p>
+        </div>
+        <div class="col-md-6 irregular-people-description">
+          <h2>Lorem ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.</p>
+        </div>
+        <div class="col-md-12">
+          <div class="bar-chart">
+            <div class="regular"></div>
+            <div class="irregular"></div>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-3">
           <h2>Lorem ipsum dolor</h2>
