@@ -67,7 +67,10 @@
         background-color: #45454d;
         color: #b5b5bd;
       }
+<<<<<<< HEAD
 
+=======
+      
       .separator {
         background-image: url("images/separator.png");
         height: 33px;
@@ -76,7 +79,8 @@
         margin-top: 15px;
         margin-bottom: 20px;
       }
-
+      
+>>>>>>> 338acd89770993843100d772d380a5294b934d02
       #irregularities_grouped_in_parties_chart {
         height: 400px;
       }
@@ -318,9 +322,15 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
 
+      <hr />
+
+=======
+      
       <div class="separator"></div>
-
+      
+>>>>>>> 338acd89770993843100d772d380a5294b934d02
       <div class="row">
         <div class="col-md-4 irregularities-grouped-in-parties">
           <div id="irregularities_grouped_in_parties_chart"></div>
@@ -330,9 +340,15 @@
           <p>Die 631 Politikern wurden auf die jeweilige Partei eingeteilt. Es zeigt die Parteien, welche die meisten Politiker der Blacklist beherbergt.</p>
         </div>
       </div>
+<<<<<<< HEAD
 
       <hr />
 
+=======
+      
+      <div class="separator"></div>
+      
+>>>>>>> 338acd89770993843100d772d380a5294b934d02
       <div class="row">
         <div class="col-md-4 bad-boys">
           <h2>Bad Boys der SPD</h2>
@@ -410,9 +426,15 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
 
+      <hr />
+
+=======
+      
       <div class="separator"></div>
-
+      
+>>>>>>> 338acd89770993843100d772d380a5294b934d02
       <div class="row">
         <div class="col-md-4 battle-ground">
           <h2>Battle Ground</h2>
