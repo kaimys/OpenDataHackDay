@@ -56,7 +56,7 @@ $(function() {
   });
 
   var bad_boys = _.chain(outputData.badboys)
-      .where({'party' : 'CDU'})
+      .where({'party' : 'SPD'})
       .value();
   var html = '', i = 0;
   bad_boys.forEach(function(bb) {
