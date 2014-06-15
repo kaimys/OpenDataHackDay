@@ -24,7 +24,8 @@
     "color": "#44FFCC",
     "count": 19
   }],
-  "badboys": [{
+  "badboys": [
+  {
     "party": "SPD",
     "name": "Petra Hinz",
     "count": 12,
