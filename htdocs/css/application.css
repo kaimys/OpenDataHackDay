@@ -1,0 +1,248 @@
+body {
+  background-color: #45454d;
+  color: #b5b5bd;
+  font-size: 20px;
+  font-family: "Gotham-Light", "Helvetica Neue", Arial, Sans-Serif;
+}
+
+.separator {
+  background-image: url("../images/separator.png");
+  height: 33px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-family: Aleo, 'Helvetica Neue';
+  font-size: 30px;
+}
+
+#irregularities_grouped_in_parties_chart {
+  height: 400px;
+}
+
+/************************************/
+
+.regular-people-description {
+
+}
+
+.regular-people-description h2 {
+  color: #FFFFFF;
+}
+
+.irregular-people-description {
+}
+
+.irregular-people-description h2 {
+  color: #ffb456;
+}
+
+.bar-chart {
+  background-color: #525260;
+  height: 60px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 6px solid #34343c;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 50px;
+}
+
+.bar-chart .regular {
+  background-color: #525260;
+  width: 75%;
+  height: 60px;
+  float: left;
+  cursor: not-allowed;
+}
+
+.bar-chart .irregular {
+  background-color: #ffb456;
+  width: 25%;
+  height: 60px;
+  float: left;
+  cursor: pointer;
+}
+
+.bar-chart .irregular:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+
+.irregularities-grouped-in-parties {
+}
+
+.irregularities-grouped-in-parties h2 {
+  color: #ffb456;
+}
+
+
+
+
+.bad-boys {
+
+}
+
+.bad-boys h2 {
+  color: #ffb456;
+}
+
+.head-with-name-label {
+  cursor: pointer;
+}
+
+.head-with-name-label .head {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.head-with-name-label .head img {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  border: 10px solid #34343c;
+}
+
+.head-with-name-label:hover .head img {
+  border: 10px solid #FFFFFF;
+}
+
+.head-with-name-label .name-label {
+  text-align: center;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+
+
+.battle-ground {
+}
+
+.battle-ground h2 {
+  color: #ffb456;
+}
+
+
+.versus-head-with-name-label {
+
+}
+
+.versus-head-with-name-label .head {
+  width: 240px;
+  height: 240px;
+  margin: 0 auto 0 auto;
+}
+
+.versus-head-with-name-label .head img {
+  width: 240px;
+  height: 240px;
+  border-radius: 120px;
+  border: 10px solid #FFFFFF;
+}
+
+.versus-head-with-name-label .name-label {
+  text-align: center;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+
+
+
+
+.declined div {
+  height: 40px;
+  line-height: 40px;
+  background-color: #F0444B;
+  border: 2px solid #F0444B;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.accepted div {
+  height: 40px;
+  line-height: 40px;
+  background-color: #45DA64;
+  border: 2px solid #45DA64;
+  color: #000000;
+  text-align: center;
+}
+
+.without-vote div {
+  height: 40px;
+  line-height: 40px;
+  background-color: #737380;
+  border: 2px solid #737380;
+  color: #000000;
+  text-align: center;
+}
+
+.avoided-vote div {
+  height: 40px;
+  line-height: 40px;
+  background-color: #35343C;
+  border: 2px solid #737380;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.versus-head {
+
+}
+
+.versus-label {
+}
+
+.versus-label .versus-label-text {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0;
+  margin-top: 105px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.versus-party-name {
+  width: 240px;
+  height: 240px;
+  border-radius: 120px;
+  border: 10px solid #34343c;
+  text-align: center;
+  line-height: 230px;
+  font-size: 44px;
+  font-weight: bold;
+  margin: 0 auto 0 auto;
+}
+
+.vote-line {
+}
+
+.vote-line h3 {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+
+.c3-legend-item text {
+  fill: #FFFFFF;
+}
+
+.c3-shape.c3-arc {
+  stroke: #35343C;
+}
