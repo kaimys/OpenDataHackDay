@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Visualblower
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/application.css" />
+    <link href="css/c3.css" rel="stylesheet" type="text/css" />
+    <script src="js/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/c3.min.js" charset="utf-8"></script>
+    <script src="js/underscore.js" charset="utf-8"></script>
+    <script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+    <script src="data/output.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8" src="js/application.js"></script>
+  </head>
+  <body>
+    
+    <div style="background-color: #34343C; padding-top: 30px; padding-bottom: 30px; margin-bottom: 20px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="images/visualblower-logo.png" style="width: 100%" />
+          </div>
+          <div class="col-md-9" style="color: #878793; font-family: Aleo, 'Helvetica Neue'; font-size: 30px; font-weight: 400; line-height: 1em;">
+            <p>Deutsche Politiker<br />
+            verlieren Ihr Gesicht</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 regular-people-description">
+          <h2>Allgemeine Wahlbeteiligungen</h2>
+          <p>Von 631 Politikern wurde Partei übergreifend ausgewertet, wie viele an den Wahlen teilgenommen haben, unabhängig davon ob es ein Vote für Ja oder Nein war.</p>
+        </div>
+        <div class="col-md-6 irregular-people-description">
+          <h2>Political Blacklist</h2>
+          <p>Die Auswertung zeigt die Menge der 631 Politikern, welche durch Enthaltung, keiner Abstimmung geglänzt haben oder gegen Ihre eigene Partei gestimmt haben</p>
+        </div>
+        <div class="col-md-12" style="margin-top: 20px;">
+          <div class="bar-chart">
+            <div class="regular">75%</div>
+            <div class="irregular">25%</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="separator" style="margin-bottom: 0; "></div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div id="irregularities_grouped_in_parties_chart"></div>
+        </div>
+        <div class="col-md-8 irregularities-grouped-in-parties">
+          <br />
+          <br />
+          <br />
+          <h2>Die schwarze Herde der Parteien</h2>
+          <p>Die 631 Politikern wurden auf die jeweilige Partei eingeteilt. Es zeigt die Parteien, welche die meisten Politiker der Blacklist beherbergt.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <div class="col-md-4 bad-boys">
+          <h2>Bad Boys der SPD</h2>
+          <p>Eine Liste der Politikern, welche sich am auffälligsten gezeigt haben unter dem Hintergrund von Enthaltungen und Gegenteiligen Votes zu eigenen Partei.</p>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+
+            <div class="col-xs-3">
+              <div class="head-with-name-label">
+                <div class="head">
+                  <img src="images/head.jpg" style="width: 100%;" />
+                </div>
+                <div class="name-label">
+                  Michael Mustermann
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-3">
+              <div class="head-with-name-label">
+                <div class="head">
+                  <img src="images/head.jpg" style="width: 100%;" />
+                </div>
+                <div class="name-label">
+                  Michael Mustermann
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-3">
+              <div class="head-with-name-label">
+                <div class="head">
+                  <img src="images/head.jpg" style="width: 100%;" />
+                </div>
+                <div class="name-label">
+                  Michael Mustermann
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-3">
+              <div class="head-with-name-label">
+                <div class="head">
+                  <img src="images/head.jpg" style="width: 100%;" />
+                </div>
+                <div class="name-label">
+                  Michael Mustermann
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-3">
+              <div class="head-with-name-label">
+                <div class="head">
+                  <img src="images/head.jpg" style="width: 100%;" />
+                </div>
+                <div class="name-label">
+                  Michael Mustermann
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-3">
+              <div class="head-with-name-label">
+                <div class="head">
+                  <img src="images/head.jpg" style="width: 100%;" />
+                </div>
+                <div class="name-label">
+                  Michael Mustermann
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="row">
+        <div class="col-md-4 battle-ground">
+          <h2>Battle Ground</h2>
+          <p>Der Battle Ground zeigt, wie stark der Politiker gegen die eigene Partei Kämpft und zeigt auf, zu welchen anderen Parteien Ähnlichkeiten erkennbar sind.</p>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-5 versus-head">
+
+
+              <div class="versus-head-with-name-label">
+                <div class="head">
+                  <img src="images/head.jpg" style="width: 100%;" />
+                </div>
+                <div class="name-label">
+                  Michael Mustermann
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <div class="col-md-2 versus-label">
+              <div class="versus-label-text">
+                vs
+              </div>
+            </div>
+
+
+            <div class="col-md-5 versus-party">
+
+
+              <div class="versus-party-name">
+                SPD
+              </div>
+
+
+            </div>
+          </div>
+          <div class="row vote-line">
+            <div class="col-md-12">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+            <div class="col-md-6 declined">
+              <div>dagegen</div>
+            </div>
+            <div class="col-md-6 accepted">
+              <div>98% dafür</div>
+            </div>
+          </div>
+          <div class="row vote-line">
+            <div class="col-md-12">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+            <div class="col-md-6 declined">
+              <div>dagegen</div>
+            </div>
+            <div class="col-md-6 accepted">
+              <div>98% dafür</div>
+            </div>
+          </div>
+          <div class="row vote-line">
+            <div class="col-md-12">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+            <div class="col-md-6 declined">
+              <div>dagegen</div>
+            </div>
+            <div class="col-md-6 accepted">
+              <div>98% dafür</div>
+            </div>
+          </div>
+          <div class="row vote-line">
+            <div class="col-md-12">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+            <div class="col-md-6 without-vote">
+              <div>keine Stimme abgegeben</div>
+            </div>
+            <div class="col-md-6 avoided-vote">
+              <div>enthalten</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="separator" style="margin-top: 40px;"></div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <img src="images/twitter.png" style="width: 100%" />
+        </div>
+      </div>
+
+      <div class="separator" style="margin-bottom: 40px;"></div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <img src="images/share.png" style="width: 100%" />
+          <br />
+          <br />
+          <br />
+        </div>
+      </div>
+      
+      <br />
+      <br />
+      <br />
+    </div>
+
+
+  </body>
+</html>
