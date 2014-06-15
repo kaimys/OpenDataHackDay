@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Visualblower
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link href="css/c3.css" rel="stylesheet" type="text/css" />
+    <script src="js/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/c3.min.js" charset="utf-8"></script>
+    <script src="js/underscore.js" charset="utf-8"></script>
+    <script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+    <script src="data/eu.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        
+        
+        var regular_vs_irregular = c3.generate({
+          bindto: '#regular_vs_irregular_chart',
+          data: {
+            columns: [
+              ['data', 13.4]
+            ],
+            type: 'gauge'
+          },
+          gauge: {
+          },
+          color: {
+            pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+            threshold: {
+                values: [30, 60, 90, 100]
+            }
+          }
+        });
+        
+        
+        
+        var irregularities_grouped_in_parties = c3.generate({
+          bindto: '#irregularities_grouped_in_parties_chart',
+          data: {
+            columns: [
+              ['CDU', 30],
+              ['SPD', 120],
+              ['FDP', 120],
+              ['Piraten', 120],
+              ['Grünen', 120],
+              ['Linke', 120]
+            ],
+            type: 'donut'
+          },
+          donut: {
+            title: "Anteile schwarze Schafe",
+            onclick: function (d, i) { console.log(d, i); },
+            onmouseover: function (d, i) { console.log(d, i); },
+            onmouseout: function (d, i) { console.log(d, i); }
+          }
+        });
+        
+        var people_in_parties = c3.generate({
+          bindto: '#people_in_parties_chart',
+          data: {
+            columns: [
+              ['Manfred', 20],
+              ['Jürgen', 20],
+              ['Peter', 20],
+              ['Hans', 20],
+              ['Herbert', 20]
+            ],
+            type: 'donut'
+          },
+          donut: {
+            title: "Anteile schwarze Schafe",
+            onclick: function (d, i) { console.log(d, i); },
+            onmouseover: function (d, i) { console.log(d, i); },
+            onmouseout: function (d, i) { console.log(d, i); }
+          }
+        });
+        
+        var person_vs_party = c3.generate({
+          bindto: '#person_vs_party_chart',
+          data: {
+            columns: [
+              ['data1', 1, -1, 1, -1, 1, -1]
+            ],
+            types: {
+              data1: 'bar'
+            },
+            color: function (color, d) {
+              if(d.value == -1) {
+                return "#C9101E";
+              } else {
+                return "#279221";
+              }
+            }
+          },
+          axis: {
+            rotated: true,
+            x: {
+              type: 'category',
+              categories: ["Raucherverbot", "Steuersenkung", "Kostenloses Internet in Städten", "Förderung von Startups", "Solarpanels auf Autobahnen", "Veganes Essen in Schulen"]
+            },
+            y: {
+              show: false
+            }
+          },
+          legend: {
+            show: false
+          }
+        });
+        
+      });
+    </script>
+    <style type="text/css" media="screen">
+      body {
+        /*/
+        background-color: #45454d;
+        color: #FFFFFF;
+        /**/
+      }
+    </style>
+  </head>
+  <body>
+    
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Lorem ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-md-6">
+          <div id="regular_vs_irregular_chart"></div>
+        </div>
+        <div class="col-md-3">
+          <h2>Lorem ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Lorem ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-md-9">
+          <div id="irregularities_grouped_in_parties_chart"></div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-9">
+          <div id="people_in_parties_chart"></div>
+        </div>
+        <div class="col-md-3">
+          <h2>Lorem ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-9">
+          <div id="person_vs_party_chart"></div>
+        </div>
+        <div class="col-md-3">
+          <h2>Lorem ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+      <hr />
+      
+      
+    </div>
+    
+    
+  </body>
+</html>
