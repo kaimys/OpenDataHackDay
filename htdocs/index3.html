@@ -7,11 +7,33 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link href="css/c3.css" rel="stylesheet" type="text/css" />
+    <script src="js/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/c3.min.js" charset="utf-8"></script>
+    <script src="js/underscore.js" charset="utf-8"></script>
     <script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
       $(function() {
         
-        
+        var irregularities_grouped_in_parties = c3.generate({
+          bindto: '#irregularities_grouped_in_parties_chart',
+          data: {
+            columns: [
+              ['CDU', 30],
+              ['SPD', 120],
+              ['FDP', 120],
+              ['Piraten', 120],
+              ['Grünen', 120],
+              ['Linke', 120]
+            ],
+            type: 'donut'
+          },
+          donut: {
+            onclick: function (d, i) { console.log(d, i); },
+            onmouseover: function (d, i) { console.log(d, i); },
+            onmouseout: function (d, i) { console.log(d, i); }
+          }
+        });
         
       });
     </script>
@@ -118,6 +140,35 @@
       }
       
       
+      
+      
+      
+      .versus-head-with-name-label {
+        
+      }
+      
+      .versus-head-with-name-label .head {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+      }
+      
+      .versus-head-with-name-label .head img {
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+        border: 10px solid #34343c;
+      }
+      
+      .versus-head-with-name-label .name-label {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      
+      
+      
+      
+      
       .declined div {
         height: 40px;
         line-height: 40px;
@@ -189,6 +240,18 @@
             <div class="regular">75%</div>
             <div class="irregular">25%</div>
           </div>
+        </div>
+      </div>
+      
+      <hr />
+      
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Lorem ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-md-9">
+          <div id="irregularities_grouped_in_parties_chart"></div>
         </div>
       </div>
       
@@ -280,7 +343,7 @@
             <div class="col-md-5 versus-head">
               
               
-              <div class="head-with-name-label">
+              <div class="versus-head-with-name-label">
                 <div class="head">
                   <img src="images/head.jpg" style="width: 100%;" />
                 </div>
