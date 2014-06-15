@@ -12,6 +12,7 @@
     <script src="js/c3.min.js" charset="utf-8"></script>
     <script src="js/underscore.js" charset="utf-8"></script>
     <script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+    <script src="data/output.js" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
       $(function() {
         
@@ -85,7 +86,7 @@
       }
       
       .bar-chart .irregular {
-        background-color: #ff74a5;
+        background-color: #ffb456;
         width: 25%;
         height: 60px;
         float: left;
@@ -129,9 +130,14 @@
         border: 10px solid #34343c;
       }
       
+      .head-with-name-label:hover .head img {
+        border: 10px solid #FFFFFF;
+      }
+      
       .head-with-name-label .name-label {
         text-align: center;
         margin-bottom: 10px;
+        padding-top: 10px;
       }
       
       
@@ -149,21 +155,22 @@
       }
       
       .versus-head-with-name-label .head {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
+        width: 240px;
+        height: 240px;
+        margin: 0 0 0 auto;
       }
       
       .versus-head-with-name-label .head img {
-        width: 200px;
-        height: 200px;
-        border-radius: 100px;
-        border: 10px solid #34343c;
+        width: 240px;
+        height: 240px;
+        border-radius: 120px;
+        border: 10px solid #FFFFFF;
       }
       
       .versus-head-with-name-label .name-label {
         text-align: center;
         margin-bottom: 10px;
+        padding-top: 10px;
       }
       
       
@@ -186,11 +193,30 @@
         text-align: center;
       }
       
+      .without-vote div {
+        height: 40px;
+        line-height: 40px;
+        background-color: #45DA64;
+        color: #000000;
+        text-align: center;
+      }
+      
+      .avoided-vote div {
+        height: 40px;
+        line-height: 40px;
+        background-color: #35343C;
+        color: #FFFFFF;
+        text-align: center;
+      }
+      
       .versus-head {
         
       }
       
       .versus-label {
+      }
+      
+      .versus-label .versus-label-text {
         width: 50px;
         height: 50px;
         text-align: center;
@@ -202,10 +228,22 @@
         font-weight: bold;
         text-transform: uppercase;
         padding: 0;
+        margin-top: 105px;
+        margin-left: auto;
+        margin-right: auto;
       }
       
-      .versus-party {
-        
+      
+      .versus-party-name {
+        width: 240px;
+        height: 240px;
+        border-radius: 120px;
+        border: 10px solid #34343c;
+        text-align: center;
+        line-height: 230px;
+        font-size: 44px;
+        font-weight: bold;
+        margin: 0 auto 0 0;
       }
       
     </style>
@@ -357,11 +395,17 @@
                 </div>
               </div>
               
-              
             </div>
+            
+            
+            
             <div class="col-md-2 versus-label">
-              vs
+              <div class="versus-label-text">
+                vs
+              </div>
             </div>
+            
+            
             <div class="col-md-5 versus-party">
               
               
