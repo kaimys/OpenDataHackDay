@@ -57,6 +57,7 @@ h2 {
   width: 75%;
   height: 60px;
   float: left;
+  cursor: not-allowed;
 }
 
 .bar-chart .irregular {
@@ -64,9 +65,13 @@ h2 {
   width: 25%;
   height: 60px;
   float: left;
+  cursor: pointer;
 }
 
-
+.bar-chart .irregular:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+}
 
 
 .irregularities-grouped-in-parties {
@@ -88,7 +93,7 @@ h2 {
 }
 
 .head-with-name-label {
-
+  cursor: pointer;
 }
 
 .head-with-name-label .head {
