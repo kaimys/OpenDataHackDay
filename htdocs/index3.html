@@ -15,18 +15,42 @@
     <script src="data/output.js" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
       $(function() {
-        
+
+        var irregularities_grouped_in_parties_data;
+
+        // Gauge
+
+        var tot_reg = parseInt(100.0 * (outputData.totals.count - outputData.totals.badboys)/outputData.totals.count + .5);
+        var tot_irr = parseInt(100.0 * outputData.totals.badboys/outputData.totals.count + .5);
+        $('div.regular').width(tot_reg + '%');
+        $('div.irregular').width(tot_irr + '%');
+        $('div.regular').text(tot_reg + '%');
+        $('div.irregular').text(tot_irr + '%');
+        $('div.regular').click(function() {
+            irregularities_grouped_in_parties.load({
+                columns: _.chain(outputData.parties)
+                    .map(function(party) { return [party['name'], party['count']] } )
+                    .value(),
+            });
+        });
+        $('div.irregular').click(function() {
+            irregularities_grouped_in_parties.load({
+                columns: _.chain(outputData.parties)
+                    .map(function(party) { return [party['name'], party['count']] } )
+                    .value(),
+            });
+        });
+
+        // Pie chart
+
+        irregularities_grouped_in_parties_data = _.chain(outputData.parties)
+            .map(function(party) { return [party['name'], party['count']] } )
+            .value();
+
         var irregularities_grouped_in_parties = c3.generate({
           bindto: '#irregularities_grouped_in_parties_chart',
           data: {
-            columns: [
-              ['CDU', 30],
-              ['SPD', 120],
-              ['FDP', 120],
-              ['Piraten', 120],
-              ['Grünen', 120],
-              ['Linke', 120]
-            ],
+            columns: irregularities_grouped_in_parties_data,
             type: 'donut'
           },
           donut: {
@@ -35,7 +59,7 @@
             onmouseout: function (d, i) { console.log(d, i); }
           }
         });
-        
+
       });
     </script>
     <style type="text/css" media="screen">
@@ -43,28 +67,28 @@
         background-color: #45454d;
         color: #b5b5bd;
       }
-      
+
       #irregularities_grouped_in_parties_chart {
         height: 400px;
       }
-      
+
       /************************************/
-      
+
       .regular-people-description {
-        
+
       }
-      
+
       .regular-people-description h2 {
         color: #FFFFFF;
       }
-      
+
       .irregular-people-description {
       }
-      
+
       .irregular-people-description h2 {
         color: #ffb456;
       }
-      
+
       .bar-chart {
         background-color: #525260;
         height: 60px;
@@ -77,106 +101,106 @@
         color: #FFFFFF;
         line-height: 50px;
       }
-      
+
       .bar-chart .regular {
         background-color: #525260;
         width: 75%;
         height: 60px;
         float: left;
       }
-      
+
       .bar-chart .irregular {
         background-color: #ffb456;
         width: 25%;
         height: 60px;
         float: left;
       }
-      
-      
-      
-      
+
+
+
+
       .irregularities-grouped-in-parties {
       }
-      
+
       .irregularities-grouped-in-parties h2 {
         color: #ffb456;
       }
-      
-      
-      
-      
+
+
+
+
       .bad-boys {
-        
+
       }
-      
+
       .bad-boys h2 {
         color: #ffb456;
       }
-      
+
       .head-with-name-label {
-        
+
       }
-      
+
       .head-with-name-label .head {
         width: 150px;
         height: 150px;
         margin: 0 auto;
       }
-      
+
       .head-with-name-label .head img {
         width: 150px;
         height: 150px;
         border-radius: 75px;
         border: 10px solid #34343c;
       }
-      
+
       .head-with-name-label:hover .head img {
         border: 10px solid #FFFFFF;
       }
-      
+
       .head-with-name-label .name-label {
         text-align: center;
         margin-bottom: 10px;
         padding-top: 10px;
       }
-      
-      
-      
+
+
+
       .battle-ground {
       }
-      
+
       .battle-ground h2 {
         color: #ffb456;
       }
-      
-      
+
+
       .versus-head-with-name-label {
-        
+
       }
-      
+
       .versus-head-with-name-label .head {
         width: 240px;
         height: 240px;
         margin: 0 0 0 auto;
       }
-      
+
       .versus-head-with-name-label .head img {
         width: 240px;
         height: 240px;
         border-radius: 120px;
         border: 10px solid #FFFFFF;
       }
-      
+
       .versus-head-with-name-label .name-label {
         text-align: center;
         margin-bottom: 10px;
         padding-top: 10px;
       }
-      
-      
-      
-      
-      
+
+
+
+
+
       .declined div {
         height: 40px;
         line-height: 40px;
@@ -184,7 +208,7 @@
         color: #FFFFFF;
         text-align: center;
       }
-      
+
       .accepted div {
         height: 40px;
         line-height: 40px;
@@ -192,7 +216,7 @@
         color: #000000;
         text-align: center;
       }
-      
+
       .without-vote div {
         height: 40px;
         line-height: 40px;
@@ -200,7 +224,7 @@
         color: #000000;
         text-align: center;
       }
-      
+
       .avoided-vote div {
         height: 40px;
         line-height: 40px;
@@ -208,14 +232,14 @@
         color: #FFFFFF;
         text-align: center;
       }
-      
+
       .versus-head {
-        
+
       }
-      
+
       .versus-label {
       }
-      
+
       .versus-label .versus-label-text {
         width: 50px;
         height: 50px;
@@ -232,8 +256,8 @@
         margin-left: auto;
         margin-right: auto;
       }
-      
-      
+
+
       .versus-party-name {
         width: 240px;
         height: 240px;
@@ -245,11 +269,11 @@
         font-weight: bold;
         margin: 0 auto 0 0;
       }
-      
+
     </style>
   </head>
   <body>
-    
+
     <div style="background-color: #34343C; padding-top: 20px; padding-bottom: 20px;">
       <div class="container">
         <div class="row">
@@ -263,7 +287,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="container">
       <div class="row">
         <div class="col-md-6 regular-people-description">
@@ -281,9 +305,9 @@
           </div>
         </div>
       </div>
-      
+
       <hr />
-      
+
       <div class="row">
         <div class="col-md-4 irregularities-grouped-in-parties">
           <div id="irregularities_grouped_in_parties_chart"></div>
@@ -293,9 +317,9 @@
           <p>Die 631 Politikern wurden auf die jeweilige Partei eingeteilt. Es zeigt die Parteien, welche die meisten Politiker der Blacklist beherbergt.</p>
         </div>
       </div>
-      
+
       <hr />
-      
+
       <div class="row">
         <div class="col-md-4 bad-boys">
           <h2>Bad Boys der SPD</h2>
@@ -303,7 +327,7 @@
         </div>
         <div class="col-md-8">
           <div class="row">
-            
+
             <div class="col-xs-3">
               <div class="head-with-name-label">
                 <div class="head">
@@ -314,7 +338,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xs-3">
               <div class="head-with-name-label">
                 <div class="head">
@@ -325,7 +349,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xs-3">
               <div class="head-with-name-label">
                 <div class="head">
@@ -336,7 +360,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xs-3">
               <div class="head-with-name-label">
                 <div class="head">
@@ -347,7 +371,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xs-3">
               <div class="head-with-name-label">
                 <div class="head">
@@ -358,7 +382,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xs-3">
               <div class="head-with-name-label">
                 <div class="head">
@@ -369,13 +393,13 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
-      
+
       <hr />
-      
+
       <div class="row">
         <div class="col-md-4 battle-ground">
           <h2>Battle Ground</h2>
@@ -384,8 +408,8 @@
         <div class="col-md-8">
           <div class="row">
             <div class="col-md-5 versus-head">
-              
-              
+
+
               <div class="versus-head-with-name-label">
                 <div class="head">
                   <img src="images/head.jpg" style="width: 100%;" />
@@ -394,26 +418,26 @@
                   Michael Mustermann
                 </div>
               </div>
-              
+
             </div>
-            
-            
-            
+
+
+
             <div class="col-md-2 versus-label">
               <div class="versus-label-text">
                 vs
               </div>
             </div>
-            
-            
+
+
             <div class="col-md-5 versus-party">
-              
-              
+
+
               <div class="versus-party-name">
                 SPD
               </div>
-              
-              
+
+
             </div>
           </div>
           <div class="row">
@@ -466,13 +490,13 @@
           </div>
         </div>
       </div>
-      
+
       <br />
       <br />
       <br />
-      
+
     </div>
-    
-    
+
+
   </body>
 </html>
