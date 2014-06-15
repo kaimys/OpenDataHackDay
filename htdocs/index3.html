@@ -43,26 +43,9 @@
         color: #b5b5bd;
       }
       
-      #regular_vs_irregular_chart {
-        height: 200px;
-        background-color: #F1F1F1;
-      }
-      
       #irregularities_grouped_in_parties_chart {
-        height: 200px;
-        background-color: #F1F1F1;
+        height: 400px;
       }
-      
-      #people_in_parties_chart {
-        height: 200px;
-        background-color: #F1F1F1;
-      }
-      
-      #person_vs_party_chart {
-        height: 200px;
-        background-color: #F1F1F1;
-      }
-      
       
       /************************************/
       
@@ -71,14 +54,14 @@
       }
       
       .regular-people-description h2 {
-        color: #ffb456;
+        color: #FFFFFF;
       }
       
       .irregular-people-description {
       }
       
       .irregular-people-description h2 {
-        color: #ff74a5;
+        color: #ffb456;
       }
       
       .bar-chart {
@@ -109,12 +92,24 @@
       }
       
       
+      
+      
+      .irregularities-grouped-in-parties {
+      }
+      
+      .irregularities-grouped-in-parties h2 {
+        color: #ffb456;
+      }
+      
+      
+      
+      
       .bad-boys {
         
       }
       
       .bad-boys h2 {
-        color: #ff74a5;
+        color: #ffb456;
       }
       
       .head-with-name-label {
@@ -141,6 +136,12 @@
       
       
       
+      .battle-ground {
+      }
+      
+      .battle-ground h2 {
+        color: #ffb456;
+      }
       
       
       .versus-head-with-name-label {
@@ -148,15 +149,15 @@
       }
       
       .versus-head-with-name-label .head {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         margin: 0 auto;
       }
       
       .versus-head-with-name-label .head img {
-        width: 150px;
-        height: 150px;
-        border-radius: 75px;
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
         border: 10px solid #34343c;
       }
       
@@ -228,12 +229,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 regular-people-description">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.</p>
+          <h2>Allgemeine Wahlbeteiligungen</h2>
+          <p>Von 631 Politikern wurde Partei übergreifend ausgewertet, wie viele an den Wahlen teilgenommen haben, unabhängig davon ob es ein Vote für Ja oder Nein war.</p>
         </div>
         <div class="col-md-6 irregular-people-description">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.</p>
+          <h2>Political Blacklist</h2>
+          <p>Die Auswertung zeigt die Menge der 631 Politikern, welche durch Enthaltung, keiner Abstimmung geglänzt haben oder gegen Ihre eigene Partei gestimmt haben</p>
         </div>
         <div class="col-md-12">
           <div class="bar-chart">
@@ -246,12 +247,12 @@
       <hr />
       
       <div class="row">
-        <div class="col-md-3">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-4 irregularities-grouped-in-parties">
           <div id="irregularities_grouped_in_parties_chart"></div>
+        </div>
+        <div class="col-md-8">
+          <h2>Die schwarze Herde der Parteien</h2>
+          <p>Die 631 Politikern wurden auf die jeweilige Partei eingeteilt. Es zeigt die Parteien, welche die meisten Politiker der Blacklist beherbergt.</p>
         </div>
       </div>
       
@@ -260,7 +261,7 @@
       <div class="row">
         <div class="col-md-4 bad-boys">
           <h2>Bad Boys der SPD</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Eine Liste der Politikern, welche sich am auffälligsten gezeigt haben unter dem Hintergrund von Enthaltungen und Gegenteiligen Votes zu eigenen Partei.</p>
         </div>
         <div class="col-md-8">
           <div class="row">
@@ -338,6 +339,10 @@
       <hr />
       
       <div class="row">
+        <div class="col-md-4 battle-ground">
+          <h2>Battle Ground</h2>
+          <p>Der Battle Ground zeigt, wie stark der Politiker gegen die eigene Partei Kämpft und zeigt auf, zu welchen anderen Parteien Ähnlichkeiten erkennbar sind.</p>
+        </div>
         <div class="col-md-8">
           <div class="row">
             <div class="col-md-5 versus-head">
@@ -416,63 +421,11 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <h2>lorem ipsum</h2>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accuvsam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        </div>
       </div>
       
-      <hr />
-      
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="col-md-6">
-          <div id="regular_vs_irregular_chart"></div>
-        </div>
-        <div class="col-md-3">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="col-md-9">
-          <div id="irregularities_grouped_in_parties_chart"></div>
-        </div>
-      </div>
-      
-      <hr />
-      
-      <div class="row">
-        <div class="col-md-9">
-          <div id="people_in_parties_chart"></div>
-        </div>
-        <div class="col-md-3">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-      </div>
-      
-      <hr />
-      
-      <div class="row">
-        <div class="col-md-9">
-          <div id="person_vs_party_chart"></div>
-        </div>
-        <div class="col-md-3">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-      </div>
-      <hr />
-      
+      <br />
+      <br />
+      <br />
       
     </div>
     
