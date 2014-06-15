@@ -232,3 +232,12 @@ h2 {
   font-weight: bold;
   font-size: 1em;
 }
+
+
+.c3-legend-item text {
+  fill: #FFFFFF;
+}
+
+.c3-shape.c3-arc {
+  stroke: #35343C;
+}
