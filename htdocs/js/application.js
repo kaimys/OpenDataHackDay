@@ -43,6 +43,10 @@ $(function() {
         var bad_boys = _.chain(outputData.badboys)
             .where({'party' : d.name})
             .value();
+        
+        // d.name    
+        $(".party").text(d.name);
+        
         var html = '', i = 0;
         bad_boys.forEach(function(bb) {
             if(i++ < 8) {
